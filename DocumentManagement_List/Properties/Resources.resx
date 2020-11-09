@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msgAccessSystemFile" xml:space="preserve">
+    <value>Accessed a system file.
+System files are excluded from the search.
+Check the Log folder for excluded folders.
+Log folder :</value>
+  </data>
+  <data name="msgAuthor" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="msgCheckClearCondition" xml:space="preserve">
+    <value>The narrowing condition has been specified.
+The conditions will be cleared, but are you sure?</value>
+  </data>
+  <data name="msgClassified" xml:space="preserve">
+    <value>Classified</value>
+  </data>
+  <data name="msgConfirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="msgCreateDate" xml:space="preserve">
+    <value>Created date</value>
+  </data>
+  <data name="msgDocumentClass" xml:space="preserve">
+    <value>Document classification</value>
+  </data>
+  <data name="msgDragAndDrop" xml:space="preserve">
+    <value>If you add it by drag and drop, it will not match the search key. Is it okay?</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="msgExcelfile" xml:space="preserve">
+    <value>Excel File(*.xlsx)|*.xlsx</value>
+  </data>
+  <data name="msgExportExcelDefault" xml:space="preserve">
+    <value>ExcelExport_</value>
+  </data>
+  <data name="msgExportExcelFile" xml:space="preserve">
+    <value>Exported an Excel file.</value>
+  </data>
+  <data name="msgFailedFileInfo" xml:space="preserve">
+    <value>Failed to get file information.</value>
+  </data>
+  <data name="msgFailedReadPropertyFile" xml:space="preserve">
+    <value>There are files whose properties could not be read.
+Check the document classification item.</value>
+  </data>
+  <data name="msgFailedReadUserSetting" xml:space="preserve">
+    <value>Failed to read user setting file.</value>
+  </data>
+  <data name="msgFailedSearchFile" xml:space="preserve">
+    <value>File search failed.</value>
+  </data>
+  <data name="msgFailedSettingFile" xml:space="preserve">
+    <value>files could not be set.
+Check the document classification item.</value>
+  </data>
+  <data name="msgFailedWriteExcelFile" xml:space="preserve">
+    <value>Failed to write the Excel file.</value>
+  </data>
+  <data name="msgFailedWriteUserSetting" xml:space="preserve">
+    <value>Failed to write user setting file.</value>
+  </data>
+  <data name="msgFileContinueProcess" xml:space="preserve">
+    <value>over.
+Do you want to continue processing?</value>
+  </data>
+  <data name="msgFileLessHundredThousand" xml:space="preserve">
+    <value>Please search again with less than 100,000 files.</value>
+  </data>
+  <data name="msgFileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="msgFileOverHundredThousand" xml:space="preserve">
+    <value>The number of files exceeds 100,000.</value>
+  </data>
+  <data name="msgFilePath" xml:space="preserve">
+    <value>File Path</value>
+  </data>
+  <data name="msgFileTarget" xml:space="preserve">
+    <value>The target file is</value>
+  </data>
+  <data name="msgLastUpdate" xml:space="preserve">
+    <value>Last updated by</value>
+  </data>
+  <data name="msgNotExistFolder" xml:space="preserve">
+    <value>The specified folder does not exist.</value>
+  </data>
+  <data name="msgNotFileExist" xml:space="preserve">
+    <value>The target file does not exist.</value>
+  </data>
+  <data name="msgNotSecureFolder" xml:space="preserve">
+    <value>does not exist in the secure folder and therefore cancels the process.</value>
+  </data>
+  <data name="msgSearchLongTime" xml:space="preserve">
+    <value>It may take a long time to search, but are you sure?</value>
+  </data>
+  <data name="msgSelectFile" xml:space="preserve">
+    <value>Please select the save destination file.</value>
+  </data>
+  <data name="msgSelectFolder" xml:space="preserve">
+    <value>Please select the folder.</value>
+  </data>
+  <data name="msgSelectFolderUpper" xml:space="preserve">
+    <value>The upper folder is specified.</value>
+  </data>
+  <data name="msgSelectSearchFolder" xml:space="preserve">
+    <value>Please select a folder to search</value>
+  </data>
+  <data name="msgStampOfficeFile" xml:space="preserve">
+    <value>If you put a stamp on an Office file, it may take some time to process.</value>
+  </data>
+  <data name="msgStoragePeriod" xml:space="preserve">
+    <value>Storage period</value>
+  </data>
+  <data name="msgStoragePeriodYear" xml:space="preserve">
+    <value>Storage period (years)</value>
+  </data>
+  <data name="msgUpdateDate" xml:space="preserve">
+    <value>Update date</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="StampA" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhaABqAIcAAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAABACwAAAAAaABqAAAI/wADCBxIsKDBgwgTKlzIsKHDhxAj
+        SpxIsaLFixgzatzIsaPHjyBDihQJoKTJkyhTqlzJsqXLly0hwpxJs6ZNmDJv6tzJk2XOnkCD2vwptKhR
+        lUSPKjWadKnTnk2fSh36cGpKhzs9WkXZECjHrScXFt0I1mTCpRnLlkT4FKNaAAenXnxrcKtFugTLVsQr
+        kG9Ev36jSh34dq1EvoUNC24bILHiqmobZyU8GbJennkrY42sua/Ov5w/F8Rs2fFMtqI3mz7tmfLNxauv
+        tvb8unRsn5QzU1V9G7dkxam79vb9G65rmrB7Hwe+W/hw2bTNLn+ZPDZvnLafG7/usrpp3Vynx/bM/ly8
+        9OLUySs3/xi5+ras0SONPv69U/nz6efHD527XOveMcWfXaDpNaBVh0WmH4EFggWegwkauOBgEwUmYYQQ
+        PnjfXgqORiGHF2o41lwd1qVUWiXGNaJbKaoIFVnaMehcjB/OSOOG/t0oYI46ChVgj7XxCOSLQg7ZmVhG
+        HvVjktiN5CR7wT05kpJSPklllVPuiGVIV24JUpdeaqUlQ0yOiWSZQS2JJnFkrumVfW42aWOczbVJZ5Rn
+        3llnnnq6V2Sf+9kJaHxzDlpfoYauFOaijDbq6KOQRirppJRWaumlmGaq6aacdurpp6CGKuqopJZq6qmV
+        BgQAOw==
+</value>
+  </data>
+  <data name="StampB" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhaABqAIcAAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAABACwAAAAAaABqAAAI/wADCBxIsKDBgwgTKlzIsKHDhxAj
+        SpxIsaLFixgzatzIsaPHjyBDihQJoKTJkyhTqlzJsqXLly0hwpxJs6ZNmDJv6tzJk2XOnkCD2vwptKhR
+        lUSPKjWadKnTnk2fSh36cGpKhzs9WkXZECjHrScXFt0I1mTCpRnLlkT4FKNaAAenXnxrcKtFugTLVsQr
+        kG9Ev36jSh34dq1EvoUNC24bILHiqmobO37cNfLMxUgxo72sOWzno5Jf5l05mjPWyTEJ++xL83Pi0plD
+        44SMmrRq27JF06599XZv1qYr8/4tPDjD4bGLzz6N3DNw4jVdF4YN3bjY5s5z/269Gzv17dYVYvHP7tJ3
+        +e7Nv5MPf3Y8ZeWpmYPVjht+fPl2a/+1jHq/Xvrz+RfgZIdF9tx/AtplnoIJWqXeYBMFhmCBEx7o1F0G
+        FiQXhhUuONZcGdalVFohxvWhWyWaCBVZ7m2IX4sjogcjUzLOKJR0NkZXY44rvsijVzv+qBOOQp7nY5FD
+        jqTkg1kt6SRoTi4JZZQjTUllSFZe+VGWWnbEpXhIBkVkmMkdR2aP9p3J3ZFqLpdmm7qxCed9Zs6po5x2
+        lnldnuyxxWefKv5p5JuCZtfloYgmquiijDbq6KOQRirppJRWaumlmGaq6aacdurpp6CGKuqojQYEADs=
+</value>
+  </data>
+  <data name="StampS" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhaABqAIcAAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAABACwAAAAAaABqAAAI/wADCBxIsKDBgwgTKlzIsKHDhxAj
+        SpxIsaLFixgzatzIsaPHjyBDihQJoKTJkyhTqlzJsqXLly0hwpxJs6ZNmDJv6tzJk2XOnkCD2vwptKhR
+        lUSPKjWadKnTnk2fSh36cGpKhzs9WkXZECjHrScXFt0I1mTCpRnLlkT4FKNaAAenXnxrcKtFugTLVsQr
+        kG9Ev36jSh34dq1EvoUNC24bILHiqmob66w7ebFTyTTFUoWstybWzJbRgibMlfToro5f5kVqGifn1D5b
+        h5XtMjTs1WNfw2ZNm6ft23Gh6t69UmHlz8RdBz/NMPlNyjN/O7/aOzby6Y+tY1aOGvvj7bP7MvDX7D07
+        b/C1h0+HDhd3dPWDPTeXD7/tc7b361/e/Tcyer39AZjaYf79Z9VEgAV2nV3VMUYggA0qtVeBEeZGkYIG
+        Wnghhe4d5RaHHQqVFogFMTUihGd5RVZ5cunHYlDSvXhcdzJK6GKNWd2IY3407iiijj6OZ1yQGs5HJIwj
+        JRmicEoq6WGTTpoI5UhPTkmSlFaCVGWWH21p5JFM9gjmjF+OSSZ5Zp45ZJpqpsgmj2W++d6CcnIXZ53p
+        0YlnTEDu2Z6efp53Z6DUcWnooYgmquiijDbq6KOQRirppJRWaumlmGaq6aacdurpp6CGKqqjAQEAOw==
+</value>
+  </data>
+  <data name="msgChangeSetting" xml:space="preserve">
+    <value>Already set, do you want to change it?</value>
+  </data>
+  <data name="msgDetectPassword" xml:space="preserve">
+    <value>Detect password-protected zip </value>
+  </data>
+  <data name="msgFailedOpenGCPdocument" xml:space="preserve">
+    <value>Failed to open GCP secrecy documents list (SA secrecy).</value>
+  </data>
+  <data name="msgFailedReadCommonFile" xml:space="preserve">
+    <value>Failed to read common setting file.</value>
+  </data>
+  <data name="msgFailedReadCsvFile" xml:space="preserve">
+    <value>Failed to read CSV file.</value>
+  </data>
+  <data name="msgFailedReadDocumentPath" xml:space="preserve">
+    <value>Failed to read document path in common setting file.</value>
+  </data>
+  <data name="msgOpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="msgSelectData" xml:space="preserve">
+    <value>Select the data to change.</value>
+  </data>
+  <data name="msgStatusInfo" xml:space="preserve">
+    <value>Obtaining file information {0} / {1}number</value>
+  </data>
+  <data name="msgStatusSearch" xml:space="preserve">
+    <value>File search target file {0}number</value>
+  </data>
+  <data name="msgStatusSetting" xml:space="preserve">
+    <value>Setting file information</value>
+  </data>
+  <data name="msgZipFile" xml:space="preserve">
+    <value>ZIP File(*.zip)|*.zip|All File(*.*)|*.*</value>
+  </data>
+  <data name="msgZipFormatContent" xml:space="preserve">
+    <value>→</value>
+  </data>
+  <data name="msgZipFormatFile" xml:space="preserve">
+    <value>〇</value>
+  </data>
+  <data name="msgZipFormatNot" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgZipDecompress" xml:space="preserve">
+    <value>Decompressed</value>
+  </data>
+  <data name="msgZip" xml:space="preserve">
+    <value>zip</value>
+  </data>
+  <data name="msgZipListDelete" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgErrorArgumentOutOfRange" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgErrorFileOpen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgErrorFolderOpen" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgCommonCulture" xml:space="preserve">
+    <value>(EN)言語設定</value>
+  </data>
+  <data name="msgCommonDefaultSecrecy" xml:space="preserve">
+    <value>(EN)標準機密区分</value>
+  </data>
+  <data name="msgCommonFileNothing" xml:space="preserve">
+    <value>(EN)共通設定ファイルがありません</value>
+  </data>
+  <data name="msgCommonFinal" xml:space="preserve">
+    <value>(EN)最終版</value>
+  </data>
+  <data name="msgCommonOfficeCode" xml:space="preserve">
+    <value>(EN)事業所コード</value>
+  </data>
+  <data name="msgCommonSABListLocalPath" xml:space="preserve">
+    <value>(EN)文書のサーバーパス</value>
+  </data>
+  <data name="msgCommonSABListServerPath" xml:space="preserve">
+    <value>(EN)文書のローカルパス</value>
+  </data>
+  <data name="msgCommonSecureFolder" xml:space="preserve">
+    <value>(EN)セキュアフォルダリスト</value>
+  </data>
+  <data name="msgCommonSettingNothing" xml:space="preserve">
+    <value>(EN)共通設定ファイルで設定していない項目があります。</value>
+  </data>
+  <data name="msgCommonTempPath" xml:space="preserve">
+    <value>(EN)zip一時解凍先</value>
+  </data>
+  <data name="msgZipFileError" xml:space="preserve">
+    <value>(EN)ファイルエラー</value>
+  </data>
+  <data name="msgZipPasswordError" xml:space="preserve">
+    <value>(EN)パスワード付き</value>
+  </data>
+  <data name="msgViewChangeError" xml:space="preserve">
+    <value>(EN)表示切替ボタン押下処理でエラーが発生しました。</value>
+  </data>
+  <data name="StampDisplay_OFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="StampDisplay_ON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+</root>

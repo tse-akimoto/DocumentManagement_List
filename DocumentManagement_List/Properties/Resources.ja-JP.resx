@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msgAccessSystemFile" xml:space="preserve">
+    <value>システムファイルにアクセスしました。
+システムファイルは検索から除外されます。
+除外されたフォルダはLogフォルダにてご確認ください。
+ログフォルダ：</value>
+  </data>
+  <data name="msgAuthor" xml:space="preserve">
+    <value>作成者</value>
+  </data>
+  <data name="msgChangeSetting" xml:space="preserve">
+    <value>設定済みですが、変更を行いますか？</value>
+  </data>
+  <data name="msgCheckClearCondition" xml:space="preserve">
+    <value>絞り込み条件が指定されています。
+条件がクリアされてしまいますがよろしいですか？</value>
+  </data>
+  <data name="msgClassified" xml:space="preserve">
+    <value>機密区分</value>
+  </data>
+  <data name="msgCommonCulture" xml:space="preserve">
+    <value>言語設定</value>
+  </data>
+  <data name="msgCommonDefaultSecrecy" xml:space="preserve">
+    <value>標準機密区分</value>
+  </data>
+  <data name="msgCommonFileNothing" xml:space="preserve">
+    <value>共通設定ファイルがありません</value>
+  </data>
+  <data name="msgCommonFinal" xml:space="preserve">
+    <value>最終版</value>
+  </data>
+  <data name="msgCommonOfficeCode" xml:space="preserve">
+    <value>事業所コード</value>
+  </data>
+  <data name="msgCommonSABListLocalPath" xml:space="preserve">
+    <value>文書のサーバーパス</value>
+  </data>
+  <data name="msgCommonSABListServerPath" xml:space="preserve">
+    <value>文書のローカルパス</value>
+  </data>
+  <data name="msgCommonSecureFolder" xml:space="preserve">
+    <value>セキュアフォルダリスト</value>
+  </data>
+  <data name="msgCommonSettingNothing" xml:space="preserve">
+    <value>共通設定ファイルで設定していない項目があります。</value>
+  </data>
+  <data name="msgCommonTempPath" xml:space="preserve">
+    <value>zip一時解凍先</value>
+  </data>
+  <data name="msgConfirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="msgCreateDate" xml:space="preserve">
+    <value>作成日</value>
+  </data>
+  <data name="msgDetectPassword" xml:space="preserve">
+    <value>パスワードつきzipを検知 </value>
+  </data>
+  <data name="msgDocumentClass" xml:space="preserve">
+    <value>文書分類</value>
+  </data>
+  <data name="msgDragAndDrop" xml:space="preserve">
+    <value>ドラックアンドドロップで追加しますと検索キーと不一致になりますがよろしいですか？</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="msgErrorArgumentOutOfRange" xml:space="preserve">
+    <value>ファイルパスが長すぎるため、ファイルを開く事ができません。
+保存場所を変更するか、パスを短くしてください。
+対象のファイル：</value>
+  </data>
+  <data name="msgErrorFileOpen" xml:space="preserve">
+    <value>選択したファイルは開けません。</value>
+  </data>
+  <data name="msgErrorFolderOpen" xml:space="preserve">
+    <value>選択したファイルのフォルダは開けません。</value>
+  </data>
+  <data name="msgExcelfile" xml:space="preserve">
+    <value>Excel ファイル(*.xlsx)|*.xlsx</value>
+  </data>
+  <data name="msgExportExcelDefault" xml:space="preserve">
+    <value>Excel出力_</value>
+  </data>
+  <data name="msgExportExcelFile" xml:space="preserve">
+    <value>Excelファイルを出力しました。</value>
+  </data>
+  <data name="msgFailedFileInfo" xml:space="preserve">
+    <value>ファイル情報取得に失敗しました。</value>
+  </data>
+  <data name="msgFailedOpenGCPdocument" xml:space="preserve">
+    <value>GCP機密文書(SA秘)一覧表を開けませんでした。</value>
+  </data>
+  <data name="msgFailedReadCommonFile" xml:space="preserve">
+    <value>共通設定ファイルの読み込みに失敗しました。</value>
+  </data>
+  <data name="msgFailedReadCsvFile" xml:space="preserve">
+    <value>CSVファイルの読み込みに失敗しました。</value>
+  </data>
+  <data name="msgFailedReadDocumentPath" xml:space="preserve">
+    <value>共通設定ファイルのドキュメントのパス読み込みが失敗しました。</value>
+  </data>
+  <data name="msgFailedReadPropertyFile" xml:space="preserve">
+    <value>プロパティの読込ができなかったファイルがあります。
+文書分類項目を確認してください。</value>
+  </data>
+  <data name="msgFailedReadUserSetting" xml:space="preserve">
+    <value>ユーザー設定ファイルの読み込みに失敗しました。</value>
+  </data>
+  <data name="msgFailedSearchFile" xml:space="preserve">
+    <value>ファイル検索に失敗しました。</value>
+  </data>
+  <data name="msgFailedSettingFile" xml:space="preserve">
+    <value>件設定できなかったファイルがあります。
+文書分類項目を確認してください。</value>
+  </data>
+  <data name="msgFailedWriteExcelFile" xml:space="preserve">
+    <value>Excelファイルの書き込みに失敗しました。</value>
+  </data>
+  <data name="msgFailedWriteUserSetting" xml:space="preserve">
+    <value>ユーザー設定ファイルの書き込みに失敗しました。</value>
+  </data>
+  <data name="msgFileContinueProcess" xml:space="preserve">
+    <value>件を超えます。
+処理を続行しますか？</value>
+  </data>
+  <data name="msgFileLessHundredThousand" xml:space="preserve">
+    <value>ファイル数を10万件以内にして再検索してください。</value>
+  </data>
+  <data name="msgFileName" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="msgFileOverHundredThousand" xml:space="preserve">
+    <value>ファイル数が10万件を超えています。</value>
+  </data>
+  <data name="msgFilePath" xml:space="preserve">
+    <value>ファイルパス</value>
+  </data>
+  <data name="msgFileTarget" xml:space="preserve">
+    <value>対象ファイルが</value>
+  </data>
+  <data name="msgLastUpdate" xml:space="preserve">
+    <value>最終更新者</value>
+  </data>
+  <data name="msgNotExistFolder" xml:space="preserve">
+    <value>指定したフォルダーは存在しません。</value>
+  </data>
+  <data name="msgNotFileExist" xml:space="preserve">
+    <value>対象のファイルがありません。</value>
+  </data>
+  <data name="msgNotSecureFolder" xml:space="preserve">
+    <value>はセキュアフォルダに存在しないため処理をキャンセルします。</value>
+  </data>
+  <data name="msgOpenFile" xml:space="preserve">
+    <value>ファイルを開く</value>
+  </data>
+  <data name="msgSearchLongTime" xml:space="preserve">
+    <value>検索に時間がかかる可能性がありますがよろしいですか？</value>
+  </data>
+  <data name="msgSelectData" xml:space="preserve">
+    <value>変更するデータを選択してください。</value>
+  </data>
+  <data name="msgSelectFile" xml:space="preserve">
+    <value>保存先のファイルを選択してください。</value>
+  </data>
+  <data name="msgSelectFolder" xml:space="preserve">
+    <value>フォルダーを指定してください。</value>
+  </data>
+  <data name="msgSelectFolderUpper" xml:space="preserve">
+    <value>上位のフォルダが指定されています。</value>
+  </data>
+  <data name="msgSelectSearchFolder" xml:space="preserve">
+    <value>検索するフォルダを選択してください</value>
+  </data>
+  <data name="msgStampOfficeFile" xml:space="preserve">
+    <value>Officeのファイルにスタンプを貼り付ける場合は、処理に時間が掛かる場合がございます。</value>
+  </data>
+  <data name="msgStatusInfo" xml:space="preserve">
+    <value>ファイル情報取得中 {0} / {1}件</value>
+  </data>
+  <data name="msgStatusSearch" xml:space="preserve">
+    <value>ファイル検索中 対象ファイル {0}件</value>
+  </data>
+  <data name="msgStatusSetting" xml:space="preserve">
+    <value>ファイル情報設定中</value>
+  </data>
+  <data name="msgStoragePeriod" xml:space="preserve">
+    <value>保存期間</value>
+  </data>
+  <data name="msgStoragePeriodYear" xml:space="preserve">
+    <value>保存期間(年数)</value>
+  </data>
+  <data name="msgUpdateDate" xml:space="preserve">
+    <value>更新日</value>
+  </data>
+  <data name="msgViewChangeError" xml:space="preserve">
+    <value>表示切替ボタン押下処理でエラーが発生しました。</value>
+  </data>
+  <data name="msgZip" xml:space="preserve">
+    <value>zip</value>
+  </data>
+  <data name="msgZipDecompress" xml:space="preserve">
+    <value>解凍不可</value>
+  </data>
+  <data name="msgZipFile" xml:space="preserve">
+    <value>ZIP ファイル(*.zip)|*.zip|すべてのファイル(*.*)|*.*</value>
+  </data>
+  <data name="msgZipFileError" xml:space="preserve">
+    <value>ファイルエラー</value>
+  </data>
+  <data name="msgZipFormatContent" xml:space="preserve">
+    <value>→</value>
+  </data>
+  <data name="msgZipFormatFile" xml:space="preserve">
+    <value>〇</value>
+  </data>
+  <data name="msgZipFormatNot" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgZipListDelete" xml:space="preserve">
+    <value>zipとzip内のファイルを全てリストから削除します。</value>
+  </data>
+  <data name="msgZipPasswordError" xml:space="preserve">
+    <value>パスワード付き</value>
+  </data>
+  <data name="StampDisplay_OFF" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="StampDisplay_ON" xml:space="preserve">
+    <value>有</value>
+  </data>
+</root>

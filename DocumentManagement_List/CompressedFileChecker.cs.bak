@@ -1,0 +1,467 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using Ionic.Zip;
+using System.Windows.Forms;
+using Microsoft.Office.Core;
+using DocumentManagement_List.Properties;   // step2 iwasa
+
+namespace DocumentManagement_List
+{
+    class CompressedFileChecker
+    {
+        #region <定数定義>
+        /// <summary>
+        /// 定数定義
+        /// </summary>
+        #endregion
+
+        #region <内部変数>
+        /// <summary>
+        /// 内部変数
+        /// </summary>
+        public string SelectZipFileItem = "";
+        public FormSetting formSetting { set; get; }
+
+        public List<string> listZipPath = new List<string>();
+        public Dictionary<string, HashSet<string>> dicZipPath = new Dictionary<string, HashSet<string>>();
+
+        public static List<string> listExtension = new List<string>();  // step2 iwasa
+
+        #endregion
+
+        #region <クラス定義>
+
+        /// <summary>
+        /// zipファイル名称取得
+        /// </summary>
+        public void OpenZipFile(string initFolderPath)
+        {
+            //オープンファイルダイアログを生成する
+            OpenFileDialog op = new OpenFileDialog();
+            //op.Title = "ファイルを開く";
+            op.Title = Resources.msgOpenFile;   // step2 iwasa
+            op.InitialDirectory = initFolderPath;
+            //op.Filter = "ZIP ファイル(*.zip)|*.zip|すべてのファイル(*.*)|*.*";
+            op.Filter = Resources.msgZipFile;   // step2 iwasa
+            op.FilterIndex = 1;
+
+            //オープンファイルダイアログを表示する
+            DialogResult result = op.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                SelectZipFileItem = op.FileName;
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                //「キャンセル」ボタンまたは「×」ボタンが選択された時の処理
+            }
+        }
+#if false
+        /// <summary>
+        /// 選択したzipファイルの解凍先のリストを取得(zipの中のzip)(未使用)
+        /// </summary>
+        public List<string> GetUnzipFilePathList(string fileName)
+        {
+            List<string> result = new List<string>();
+
+            // ZipFileか
+            if (Path.GetExtension(fileName).Contains("zip") == false)
+            {
+                return result;
+            }
+
+            listZipPath.Add(fileName);
+
+            var options = new ReadOptions
+            {
+                StatusMessageWriter = System.Console.Out,
+                Encoding = System.Text.Encoding.GetEncoding(932)
+            };
+
+            try
+            {
+                string TempPath = formSetting.clsCommonSettting.strTempPath;
+
+                if (fileName.Contains(TempPath) != false)
+                {
+                    TempPath = Path.GetDirectoryName(fileName);
+                    //TempPath = Path.Combine(PathName, FileName);
+                }
+
+                if (!Directory.Exists(TempPath))
+                {
+                    Directory.CreateDirectory(TempPath);
+                }
+
+                using (ZipFile Zip = ZipFile.Read(fileName, options))
+                {
+                    // 展開先に同名のファイルがあれば上書きする
+                    Zip.ExtractExistingFile = Ionic.Zip.ExtractExistingFileAction.OverwriteSilently;
+                    // ZIPファイル内の全てのファイルを解凍する
+                    Zip.ExtractAll(TempPath);
+
+
+                    string FirstPath = (Zip[0].FileName).Split('/').First();
+                    string TarggetZipPath = Path.Combine(TempPath, FirstPath);
+                    result.Add(TarggetZipPath);
+
+                    foreach (var entry in Zip.Entries)
+                    {
+                        //entry.Extract(TempPath);
+
+                        string outputPath = Path.GetFullPath(Path.Combine(TempPath, entry.FileName));
+                        result.Add(outputPath);
+                    }
+                }
+
+                dicZipPath[fileName] = new HashSet<string>(result);
+
+                List<string> InclusionResult = new List<string>(result);
+
+                foreach(string InclusionZip in InclusionResult)
+                {
+                    // Zipの中のZipを解凍
+                    List<string> InclusionPath = GetUnzipFilePathList(InclusionZip);
+                    if (InclusionPath.Count != 0)
+                    {
+                        //match = Path.Combine(Path.GetDirectoryName(InclusionZip), Path.GetFileNameWithoutExtension(InclusionZip)) + @"\";
+                        //dicZipPath[fileName] = new HashSet<string>(result);
+                        //dicZipPath[fileName].RemoveWhere(judge);
+
+                        result.AddRange(InclusionPath);
+                    }
+                }
+
+
+            }
+            catch (Ionic.Zip.BadPasswordException ex)
+            {
+                MessageBox.Show("パスワードつきzipを検知 " + fileName);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 選択したzipファイルを再zip化する
+        /// </summary>
+        public void SelectZipProc(
+            ref HashSet<string> listZipTarget,
+            ref Dictionary<string, Dictionary<string, HashSet<string>>> dicZipResult
+            )
+        {
+            foreach (string ZipTarget in listZipTarget)
+            {
+                var InputList = dicZipResult[ZipTarget];
+                var Zip = InputList.OrderByDescending((x) => x.Key.ToString().Replace(@"\", "").Length);
+
+                foreach (var list in Zip)
+                {
+                    ZipFile _zip = new ZipFile(Encoding.GetEncoding("Shift_JIS"));
+                    string ZipFilePath = list.Key.ToString();
+
+                    string ZipFolderName = Path.GetFileNameWithoutExtension(ZipFilePath);
+                    string ZipDirectoryName = Path.GetDirectoryName(ZipFilePath);
+
+                    string ZipDir = Path.Combine(ZipDirectoryName, ZipFolderName);
+
+                    List<string> listItem = list.Value.ToList();
+                    List<string> listZipPath = new List<string>();
+
+
+                    if (list.Key.Contains(ZipTarget) == false)
+                    {
+                        foreach (string path in listItem)
+                        {
+                            if (path != listItem[0])
+                            {
+                                if (File.GetAttributes(path).HasFlag(FileAttributes.Directory) == false)
+                                {
+                                    // ファイルの場合
+                                    string Directory = Path.GetDirectoryName(path);
+                                    string after = Directory.Replace(ZipDir, "");
+                                    _zip.AddFile(path, after);
+                                }
+                            }
+                        }
+
+                        _zip.Save(ZipFilePath);
+
+
+                        //var DeleteItem = Zip.OrderBy((x) => x.Value.Contains(ZipDirectoryName)).FirstOrDefault();
+
+                        //if (DeleteItem.Value != null)
+                        //{
+                        //    DeleteItem.Value.Contains(ZipDirectoryName)
+
+                        //    DirectoryInfo di = new DirectoryInfo(ZipDirectoryName);
+
+                        //    // ディレクトリごと削除
+                        //    di.Delete(true);
+                        //}
+                    }
+                    else
+                    {
+                        // 大元
+                        string TempPath = formSetting.clsCommonSettting.strTempPath;
+                        string AddDirName = Path.Combine(TempPath, ZipFolderName);
+
+                        _zip.AddDirectory(AddDirName);
+                        _zip.Save(ZipFilePath);
+                    }
+                }
+            }
+        }
+#endif
+
+        /// <summary>
+        /// 選択したzipファイルの解凍先のリストを取得
+        /// </summary>
+        public List<string> GetUnzipFilePathList(string fileName, ref Dictionary<string, List<string>> dicPasswordZip)
+        {
+            List<string> result = new List<string>();
+
+            var options = new ReadOptions
+            {
+                StatusMessageWriter = System.Console.Out,
+                // 多言語対応のため、変更
+                //Encoding = System.Text.Encoding.GetEncoding(932)
+                Encoding = System.Text.Encoding.Default
+            };
+
+            try
+            {
+                //string TempPath = Path.Combine(formSetting.clsCommonSettting.strTempPath, Path.GetFileNameWithoutExtension(Path.GetDirectoryName(fileName)));
+                string TempPath = Path.Combine(formSetting.clsCommonSettting.strTempPath, Path.GetFileNameWithoutExtension(fileName));
+
+                if (!Directory.Exists(TempPath))
+                {
+                    Directory.CreateDirectory(TempPath);
+                }
+
+                using (ZipFile Zip = ZipFile.Read(fileName, options))
+                {
+
+                    var Split = Zip[0].FileName.Split('/');
+                    string ZipFolderPath = Path.Combine(TempPath, Split[0]);
+
+                    if (Split.Count() == 1)
+                    {
+                        // Zip内フォルダが存在しない場合
+                        TempPath += @"\" + Path.GetFileNameWithoutExtension(fileName);
+                        ZipFolderPath = TempPath;
+                    }
+
+                    result.Add(ZipFolderPath);
+
+                    // パスワード付きzipファイルの中身の情報を取得する step2 iwasa
+                    GetPasswordZipFileList(fileName, Zip.Info, ref dicPasswordZip);
+
+                    // 展開先に同名のファイルがあれば上書きする
+                    Zip.ExtractExistingFile = Ionic.Zip.ExtractExistingFileAction.OverwriteSilently;
+                    // ZIPファイル内の全てのファイルを解凍する
+                    Zip.ExtractAll(TempPath);
+
+                    foreach (var entry in Zip.Entries)
+                    {
+                        string outputPath = Path.GetFullPath(Path.Combine(TempPath, entry.FileName));
+                        result.Add(outputPath);
+                    }
+                }
+
+                dicZipPath[fileName] = new HashSet<string>(result);
+            }
+            catch (Ionic.Zip.BadPasswordException ex)
+            {
+                //MessageBox.Show("パスワードつきzipを検知 " + fileName);
+                MessageBox.Show(Resources.msgDetectPassword + fileName);    // step2 iwasa
+            }
+
+            return result;
+        }
+
+        public static bool judge(string s)
+        {
+            return !s.Contains("zip");
+        }
+
+        /// <summary>
+        /// Zip内パスをすべて取得する
+        /// </summary>
+        public void GetZipAllList(
+            List<string> listCopyBuf,
+            ref Dictionary<string, Dictionary<string, HashSet<string>>> dicZipResult,
+            ref Dictionary<string, HashSet<string>> dicCompressedItem,
+            ref Dictionary<string, List<string>> dicPasswordZip
+            )
+        {
+            foreach (string BufFile in listCopyBuf)
+            {
+                HashSet<string> listCompressed = new HashSet<string>();
+
+                if (Path.GetExtension(BufFile).Contains("zip") != false)
+                {
+                    // 解凍してリストに追加
+                    listCompressed = new HashSet<string>(GetUnzipFilePathList(BufFile, ref dicPasswordZip));
+
+                    // zipリスト
+                    dicZipResult[BufFile] = new Dictionary<string, HashSet<string>>(dicZipPath);
+                    dicZipPath.Clear();
+
+                    // すべてのパス
+                    dicCompressedItem[BufFile] = listCompressed;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 選択したzipファイルを再zip化する
+        /// </summary>
+        public void SelectZipProc(
+            ref HashSet<string> listZipTarget,
+            ref Dictionary<string, Dictionary<string, HashSet<string>>> dicZipResult
+            )
+        {
+            foreach (string ZipTarget in listZipTarget)
+            {
+                // 上書き対象のZIPファイル
+                var InputList = dicZipResult[ZipTarget];
+
+                foreach (var list in InputList)
+                {
+                    ZipFile _zip = new ZipFile(System.Text.Encoding.Default);
+                    string ZipFilePath = list.Key.ToString();
+                    List<string> listItem = list.Value.ToList();
+                    string ZipDir = listItem[0];
+
+                    // 圧縮レベルの設定
+                    _zip.CompressionLevel = Ionic.Zlib.CompressionLevel.BestCompression;
+                    // 必要な時はZIP64で圧縮する
+                    _zip.UseZip64WhenSaving = Zip64Option.AsNecessary;
+                    //// 暗号化
+                    //_zip.Encryption = EncryptionAlgorithm.PkzipWeak;
+
+                    // Zip化
+                    _zip.AddDirectory(ZipDir);
+                    _zip.Save(ZipFilePath);
+                }
+            }
+        }
+
+        /// <summary>
+        /// tmpフォルダを削除する
+        /// </summary>
+        static public void ResetTempFolder(
+            FormSetting formSetting,
+            bool isFormClose
+            )
+        {
+            if (string.IsNullOrEmpty(formSetting.clsCommonSettting.strTempPath) == false)
+            {
+                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(formSetting.clsCommonSettting.strTempPath);
+                if (di.Exists != false)
+                {
+                    di.Delete(true);
+                }
+
+                // フォームクローズではないとき
+                if (isFormClose == false)
+                {
+                    di.Create();
+                }
+            }
+        }
+
+        /// <summary>
+        /// zip内ファイルの存在をチェック
+        /// </summary>
+        static public bool IsCompresstionZipItem(
+            Dictionary<string, HashSet<string>> dic,
+            string CheckPath,
+            out string TargetZipPath)
+        {
+            bool ret = false;
+            string ZipPath = "";
+
+            // Zip内のデータか？
+            foreach (var list in dic)
+            {
+                foreach (string zipItem in list.Value)
+                {
+                    try
+                    {
+                        if (File.GetAttributes(zipItem).HasFlag(FileAttributes.Directory) == false)
+                        {
+                            if (CheckPath.Contains(zipItem))
+                            {
+                                ret = true;
+                                ZipPath = list.Key;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        // ファイル・フォルダではない
+                    }
+                }
+            }
+
+            TargetZipPath = ZipPath;
+
+            return ret;
+        }
+
+        /// <summary>
+        /// パスワード付きzip内ファイルをチェック
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="info"></param>
+        /// <param name="dicPasswordZip"></param>
+        /// <returns></returns>
+        private bool GetPasswordZipFileList(string fileName, string info, ref Dictionary<string, List<string>> dicPasswordZip)    // step2 iwasa
+        {
+            bool _isPassword = false;
+            List<string> lstFileName = new List<string>();
+
+            // 複数行の文字列を解析するため、一行ごとに分ける
+            string[] lines = info.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+            foreach (string item in lines)
+            {
+                if (item.Contains("ZipEntry") == true)
+                {
+                    if (listExtension.Contains(Path.GetExtension(item)) == true)
+                    {
+                        // 対象の拡張子であればファイル名を追加する
+                        lstFileName.Add(Path.GetFileName(item));
+                    }
+                }
+                else if (item.Contains("Encrypted") == true)
+                {
+                    if (item.Contains("True") == true)
+                    {
+                        // パスワード付きzipのため解凍不可
+                        _isPassword = true;
+                    }
+                }
+            }
+
+            if (_isPassword)
+            {
+                // 解凍不可zip
+                // fileNameには解凍不可zipのフルパスが入る
+                // lisFileNameにはzip内のファイル名が入る
+                dicPasswordZip.Add(fileName, lstFileName);
+            }
+
+            return _isPassword;
+        }
+
+        #endregion
+    }
+}

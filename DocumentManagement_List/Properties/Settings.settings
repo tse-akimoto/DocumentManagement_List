@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DocumentManagement_List.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ZokuseiSettingCSV" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\SAB\pic\属性設定.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
